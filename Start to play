@@ -1,0 +1,39 @@
+//BUT: Créer une alerte et empêcher des personnes d'entrer lorsque la salle est pleine
+//ENTREES: les personnes entrant et sortant de l'évènement
+//SORTIE: Une alerte lorsque la salle est pleine
+
+
+
+CONST
+
+salle_pleine=250
+
+VAR
+ x: ENTIER
+ occupation_salle: ENTIER
+
+
+
+ DEBUT
+
+
+ 	REPETER
+		 DEBUT
+ 			ECRIRE "Entrez le nombre de personnes entrantes ou sortantes (nombre negatif pour les sortants)"
+ 			LIRE X
+
+
+ 				SI x<>0 ALORS																						//Condition de sortie de la boucle
+ 					SI occupation_salle+x <= salle_pleine ALORS														//Si la salle est remplie ou si le nombre de personnes (x) voulant rentrer fait dépasser les 250 personnes, on saute la boucle if pour arriver au else
+ 						occupation_salle<--occupation_salle+X
+ 				SINON ECRIRE ('La salle est deja pleine ou vous comptez laisser entrer trop de monde!')				//Si condition remplie, x s'ajoute au nombre total de personnes dans la salle, sinon cette phrase apparait	
+
+
+
+ 			ECRIRE occupation_salle	
+ 			LIRE		
+ 		FIN
+
+
+ JUSQU'A x=0;																										//Condition de sortie de la boucle
+ FIN.
